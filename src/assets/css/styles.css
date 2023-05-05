@@ -1,0 +1,119 @@
+/* generales */
+
+h1 {
+  font-size: 2.5rem;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 2.5rem;
+  padding: 20px;
+}
+
+/*barra de navegacion*/
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  padding: 2rem;
+  background-color: lightblue;
+}
+
+.navbar-collapse {
+  align-items: center;
+  justify-content: left;
+}
+
+.navbar-collapse  {
+align-items: center;
+justify-content: space-between;
+}
+
+/* seccion Hero carrusel */
+
+.tit {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 8px rgb(2, 2, 2);
+}
+
+/* sobre mi */
+
+.foto {
+ width: 250px;
+ border-radius: 50%;
+}
+
+#acercademi {
+  color: yellow
+}
+
+.sobre-mi {
+  min-height: 500px;
+  padding: 20px;
+}
+
+.sobre-mi .contenedor {
+  max-width: 800px;
+  text-align: center;
+  text-justify: center;
+  justify-content: center;
+}
+
+/* secciones */
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccion-oscura {
+  color: white;
+  background-color: #140664;
+}
+
+.seccion-clara {
+  color: black;
+  background-color: aqua;
+}
+
+.seccion-contenido {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccion-titulo {
+  font-size: 2.5rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.seccion-texto {
+  font-size: 1.5rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.loginst {
+  width: 100px;
+  height: 20px;
+  border-style: inset;
+  border-width: 2px;
+}
+
+/* habilidades */
+
+.icohab {
+  width: fit-content;
+  border-radius: 30%;
+}
