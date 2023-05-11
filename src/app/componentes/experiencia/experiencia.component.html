@@ -3,97 +3,14 @@
   <div class="contenedor">
     <img src="assets/images/Experiencia.png" alt="portafolio" width="140">
     <h4 class="seccion-titulo" id="exper">Experiencia</h4>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
+    <div *ngFor="let exp of experience" class="d-flex flex-row abs-center bd-highlight mb-3">
       <div class="p-2 bd-highlight">
-        <h5>2010-2022</h5>
+        <h5>{{exp.fecha}}</h5>
       </div>
-      <div class="p-2 bd-highlight"><a href="https://www.ujmv.edu/" target="_blank" rel="noopener noreferrer"><img
-            src="assets/images/UJMV.png" alt="logo UJMV" class="loginst"></a></div>
+      <div class="p-2 bd-highlight"><a href="{{exp.url}}" target="_blank" rel="noopener noreferrer"><img
+            src="assets/images/{{exp.img}}" alt="logo" class="loginst"></a></div>
       <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Profesor de aula virtual en la Universidad José María Vargas.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2020-2022</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.youtube.com/@UniVistaTV/about/" target="_blank"
-          rel="noopener noreferrer"><img src="assets/images/Logo UniVista.jpeg" alt="logo UniVistaTV"
-            class="loginst"></a>
-      </div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Redactor y curador en Univista TV.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2013-2016</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.isum.com.ve/" target="_blank" rel="noopener noreferrer"><img
-            src="assets/images/ISUM.png" alt="logo ISUM" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Profesor de Redacción en el Instituto de Mercadotecnia.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2009-2016</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.instagram.com/unihumboldt/?hl=en" target="_blank"
-          rel="noopener noreferrer"><img src="assets/images/UAH.png" alt="logo UAH" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Profesor de Redacción en la Universidad Alejandro de Humboldt.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2006-2016</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://usm.edu.ve/" target="_blank" rel="noopener noreferrer"><img
-            src="assets/images/USM.png" alt="logo USM" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Profesor de redacción en la Universidad Santa María.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2003-2006</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.instagram.com/una.edu.ve/" target="_blank"
-          rel="noopener noreferrer"><img src="assets/images/UNA.jpeg" alt="logo UNA" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Redactor de contenidos en la Universidad Nacional Abierta.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>2000-2002</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.cavecol.org/" target="_blank" rel="noopener noreferrer"><img
-            src="assets/images/logo_cavecol.png" alt="logo CAVECOL" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Redactor de contenidos en CAVECOL.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>1995-1999</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://www.calientefm.com.ve/" target="_blank"
-          rel="noopener noreferrer"><img src="assets/images/Caliente Stereo 105.9 FM.png" alt="logo Caliente Estéreo"
-            class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)"> Redactor de noticias en la emisora de radio Caliente Estéreo FM 105.9.</a></p>
-      </div>
-    </div>
-    <div class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>1989-2000</h5>
-      </div>
-      <div class="p-2 bd-highlight"><a href="https://salesianosvenezuela.com/" target="_blank"
-          rel="noopener noreferrer"><img src="assets/images/CAS.png" alt="logo CAS" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">Redactor de contenidos en el Centro Audivisual Salesiano.</a></p>
+        <p><a href="javascript:void(0)">{{exp.text}}</a></p>
       </div>
     </div>
     <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
