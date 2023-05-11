@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'navbar-component',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class AppComponent {
-  title = 'yo_programo_desfio_modulo_3';
+export class NavBarComponent {
+  title = 'navbar';
 }

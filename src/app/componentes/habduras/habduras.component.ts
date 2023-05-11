@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'habduras-component',
   templateUrl: './habduras.component.html',
   styleUrls: ['./habduras.component.scss']
 })
-export class AppComponent {
-  title = 'yo_programo_desfio_modulo_3';
+export class HabdurasComponent {
 }

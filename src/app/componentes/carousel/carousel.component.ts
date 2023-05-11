@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'carousel-component',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class AppComponent {
-  title = 'yo_programo_desfio_modulo_3';
-}
+export class CarouselComponent { }

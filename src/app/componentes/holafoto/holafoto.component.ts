@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'holafoto-component',
   templateUrl: './holafoto.component.html',
   styleUrls: ['./holafoto.component.scss']
 })
-export class AppComponent {
-  title = 'yo_programo_desfio_modulo_3';
-}
+export class HolafotoComponent { }

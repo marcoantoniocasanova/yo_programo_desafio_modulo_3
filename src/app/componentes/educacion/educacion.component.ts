@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'educacion-componente',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.scss']
 })
-export class AppComponent {
-  title = 'yo_programo_desfio_modulo_3';
-}
+export class EducacionComponent { }
