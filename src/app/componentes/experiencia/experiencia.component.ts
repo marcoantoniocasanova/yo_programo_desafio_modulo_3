@@ -32,12 +32,17 @@ export class ExperienciaComponent implements OnInit {
   }
 
   addExperience() {
-    this.experience.push({ id: this.experience.length + 1, fecha: "", url: "", urlTitle: "", img: "", text: "" });
+    this.experience.push({ id: this.experience[this.experience.length - 1].id + 1, fecha: "", url: "", urlTitle: "", img: "", text: "" });
   }
 
   updateExperience(myForm: Form) {
   }
 
-  deleteExperience(id: number) {
+  deleteExperience(currentId: number) {
+    const indexOfObject = this.experience.findIndex(object => {
+      return object.id === currentId;
+    });
+
+    this.experience.splice(indexOfObject, 1);
   }
 }
