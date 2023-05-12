@@ -3,16 +3,43 @@
   <div class="contenedor">
     <img src="assets/images/Experiencia.png" alt="portafolio" width="140">
     <h4 class="seccion-titulo" id="exper">Experiencia</h4>
-    <div *ngFor="let exp of experience" class="d-flex flex-row abs-center bd-highlight mb-3">
-      <div class="p-2 bd-highlight">
-        <h5>{{exp.fecha}}</h5>
+    <div *ngIf="displayElement; else showThis">
+      <div *ngFor="let exp of experience" class="d-flex flex-row abs-center bd-highlight mb-3">
+
+
+
+        <div class="p-2 bd-highlight">
+          <h5>{{exp.fecha}}</h5>
+        </div>
+        <div class="p-2 bd-highlight"><a href="{{exp.url}}" target="_blank" rel="noopener noreferrer"><img
+              src="assets/images/{{exp.img}}" alt="logo" class="loginst"></a></div>
+        <div class="p-2 bd-highlight">
+          <p><a href="javascript:void(0)">{{exp.text}}</a></p>
+        </div>
+
       </div>
-      <div class="p-2 bd-highlight"><a href="{{exp.url}}" target="_blank" rel="noopener noreferrer"><img
-            src="assets/images/{{exp.img}}" alt="logo" class="loginst"></a></div>
-      <div class="p-2 bd-highlight">
-        <p><a href="javascript:void(0)">{{exp.text}}</a></p>
-      </div>
+      <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
     </div>
-    <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
   </div>
+  <ng-template #showThis>
+    <form #myForm="ngForm">
+      <fieldset *ngFor="let exp of experience; let i = index;" ngModelGroup="inputs" #inputs="ngModelGroup">
+        <div class="d-flex flex-row abs-center bd-highlight mb-3">
+          <input type="text" name="{{'exp_date'+i}}" [ngModel]="exp.fecha">
+          <input type="text" name="{{'exp_url'+i}}" [ngModel]="exp.url">
+          <input type="text" name="{{'img'+i}}" [ngModel]="exp.img">
+          <input type="text" name="{{'exp_txt'+i}}" [ngModel]="exp.text">
+          <button (click)="deleteExperience(exp.id)">
+            Borrar
+          </button>
+        </div>
+      </fieldset>
+      <button (click)="addExperience()">
+        Nueva Experiencia
+      </button>
+      <button (click)="updateExperience(myForm)">
+        Guardar Cambios
+      </button>
+    </form>
+  </ng-template>
 </section>

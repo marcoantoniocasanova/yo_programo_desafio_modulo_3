@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Form } from '@angular/forms';
+
+import { ExpTyp } from '../../modelos/experiencia.model'
+
 
 
 
@@ -9,13 +13,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencia.component.scss']
 })
 export class ExperienciaComponent implements OnInit {
-  ExperienciaType = Array<{ id: number, fecha: string, url: string, urlTitle: string, img: string, text: string }>;
-  experience: Array<{ id: number, fecha: string, url: string, urlTitle: string, img: string, text: string }> = [];
+  displayElement = false;
+  experience: ExpTyp[] = [];
 
   constructor() { }
-
   ngOnInit() {
-
     this.experience = [
       { id: 0, fecha: "2010 - 2022", url: "https://www.ujmv.edu/", urlTitle: "", img: "Experiencia.png", text: "Profesor de aula virtual en la Universidad José María Vargas." },
       { id: 1, fecha: "2010 - 2022", url: "https://www.ujmv.edu/", urlTitle: "", img: "Experiencia.png", text: "Redactor y curador en Univista TV." },
@@ -29,10 +31,11 @@ export class ExperienciaComponent implements OnInit {
     ]
   }
 
-  addExperience(todo: string) {
+  addExperience() {
+    this.experience.push({ id: this.experience.length + 1, fecha: "", url: "", urlTitle: "", img: "", text: "" });
   }
 
-  updateExperience(id: number) {
+  updateExperience(myForm: Form) {
   }
 
   deleteExperience(id: number) {
