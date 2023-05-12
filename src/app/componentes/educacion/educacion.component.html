@@ -1,5 +1,60 @@
 <!-- Seccion Educación -->
 <section class="seccion-contenido seccion-oscura">
+
+  <div class="contenedor">
+    <img src="assets/images/Experiencia.png" alt="portafolio" width="140">
+    <h4 class="seccion-titulo" id="exper">Experiencia</h4>
+    <div *ngIf="displayElement; else showThis">
+      <div *ngFor="let edu of educacion" class="d-flex flex-row abs-center bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <h5>{{edu.fecha}}</h5>
+        </div>
+        <div class="p-2 bd-highlight"><a href="{{edu.url}}" target="_blank" rel="noopener noreferrer"><img
+              src="assets/images/{{edu.img}}" alt="logo" class="loginst"></a></div>
+        <div class="p-2 bd-highlight">
+          <p><a href="javascript:void(0)">{{edu.text}}</a></p>
+        </div>
+
+      </div>
+      <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
+    </div>
+  </div>
+  <ng-template #showThis>
+    <form #myForm="ngForm">
+      <fieldset *ngFor="let edu of educacion; let i = index;" ngModelGroup="inputs" #inputs="ngModelGroup">
+        <div class="d-flex flex-row abs-center bd-highlight mb-3">
+          <input type="text" name="{{'edu_date'+i}}" [ngModel]="edu.fecha">
+          <input type="text" name="{{'edu_url'+i}}" [ngModel]="edu.url">
+          <input type="text" name="{{'edu'+i}}" [ngModel]="edu.img">
+          <input type="text" name="{{'edu_txt'+i}}" [ngModel]="edu.text">
+
+          <button (click)="deleteEducation(edu.id)">
+            Borrar
+          </button>
+        </div>
+      </fieldset>
+      <button (click)="addEducation()">
+        Nueva Experiencia
+      </button>
+      <button (click)="saveEducation(myForm)">
+        Guardar Cambios En Disco
+      </button>
+    </form>
+  </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="contenedor">
     <img src="assets/images/Estudios.png" alt="Birrete y libros" width="140">
     <h4 class="seccion-titulo" id="educ">Educación</h4>
