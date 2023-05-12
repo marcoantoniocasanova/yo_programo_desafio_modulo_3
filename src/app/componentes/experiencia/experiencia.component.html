@@ -5,9 +5,6 @@
     <h4 class="seccion-titulo" id="exper">Experiencia</h4>
     <div *ngIf="displayElement; else showThis">
       <div *ngFor="let exp of experience" class="d-flex flex-row abs-center bd-highlight mb-3">
-
-
-
         <div class="p-2 bd-highlight">
           <h5>{{exp.fecha}}</h5>
         </div>
@@ -29,6 +26,9 @@
           <input type="text" name="{{'exp_url'+i}}" [ngModel]="exp.url">
           <input type="text" name="{{'img'+i}}" [ngModel]="exp.img">
           <input type="text" name="{{'exp_txt'+i}}" [ngModel]="exp.text">
+          <button (click)="updateExperience(exp.id,exp.fecha,exp.url,exp.urlTitle,exp.img,exp.text)">
+            Guardar
+          </button>
           <button (click)="deleteExperience(exp.id)">
             Borrar
           </button>
@@ -37,9 +37,12 @@
       <button (click)="addExperience()">
         Nueva Experiencia
       </button>
-      <button (click)="updateExperience(myForm)">
-        Guardar Cambios
+      <button (click)="updateExperienceToBd(myForm)">
+        Guardar Cambios En Disco
       </button>
     </form>
   </ng-template>
+  <button (click)="updateEditMode()">
+    {{displayElement ? "Editar" : "Mostar"}}
+  </button>
 </section>

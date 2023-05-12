@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
-
 import { ExpTyp } from '../../modelos/experiencia.model'
-
-
-
-
 
 @Component({
   selector: 'experiencia-component',
@@ -13,7 +8,7 @@ import { ExpTyp } from '../../modelos/experiencia.model'
   styleUrls: ['./experiencia.component.scss']
 })
 export class ExperienciaComponent implements OnInit {
-  displayElement = false;
+  displayElement = true;
   experience: ExpTyp[] = [];
 
   constructor() { }
@@ -31,11 +26,28 @@ export class ExperienciaComponent implements OnInit {
     ]
   }
 
+  updateEditMode() {
+    this.displayElement = !this.displayElement;
+  }
+
   addExperience() {
     this.experience.push({ id: this.experience[this.experience.length - 1].id + 1, fecha: "", url: "", urlTitle: "", img: "", text: "" });
   }
 
-  updateExperience(myForm: Form) {
+  updateExperience(id: number, fecha: string, url: string, urlTitle: string, img: string, text: string) {
+    let copyListExp = [...this.experience];
+
+    console.log(text);
+    //console.log(myForm);
+    let objIndex: number;
+    //Encontar la experiencia usando id  
+    objIndex = copyListExp.findIndex((obj => obj.id == id));
+    let newExp = { id: id, fecha: fecha, url: url, urlTitle: urlTitle, img: img, text: text }
+    copyListExp[objIndex] = newExp;
+    console.log(copyListExp);
+    console.log(copyListExp[objIndex]);
+
+    this.experience = copyListExp;
   }
 
   deleteExperience(currentId: number) {
@@ -45,4 +57,6 @@ export class ExperienciaComponent implements OnInit {
 
     this.experience.splice(indexOfObject, 1);
   }
+
+  updateExperienceToBd(myform: Form) { }
 }
