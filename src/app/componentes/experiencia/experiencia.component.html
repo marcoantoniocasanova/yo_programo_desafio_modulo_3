@@ -19,16 +19,13 @@
     </div>
   </div>
   <ng-template #showThis>
-    <form #myForm="ngForm">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
       <fieldset *ngFor="let exp of experience; let i = index;" ngModelGroup="inputs" #inputs="ngModelGroup">
         <div class="d-flex flex-row abs-center bd-highlight mb-3">
           <input type="text" name="{{'exp_date'+i}}" [ngModel]="exp.fecha">
           <input type="text" name="{{'exp_url'+i}}" [ngModel]="exp.url">
           <input type="text" name="{{'img'+i}}" [ngModel]="exp.img">
           <input type="text" name="{{'exp_txt'+i}}" [ngModel]="exp.text">
-          <button (click)="updateExperience(exp.id,exp.fecha,exp.url,exp.urlTitle,exp.img,exp.text)">
-            Guardar
-          </button>
           <button (click)="deleteExperience(exp.id)">
             Borrar
           </button>
@@ -37,8 +34,8 @@
       <button (click)="addExperience()">
         Nueva Experiencia
       </button>
-      <button (click)="updateExperienceToBd(myForm)">
-        Guardar Cambios En Disco
+      <button type="submit">
+        Guardar Cambios
       </button>
     </form>
   </ng-template>
