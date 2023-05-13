@@ -7,22 +7,15 @@
       <p class="seccion-texto">{{texto}}</p>
 
     </div>
-    <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
   </div>
-<ng-template #showThis>
-  <form #myForm="ngForm">
-    <fieldset  ngModelGroup="inputs" #inputs="ngModelGroup">
-      <div class="d-flex flex-row abs-center bd-highlight mb-3">
-        <input type="text" (change)="updateAcercademiTitle($event)" name="{{'title}}">
-        <input type="text" (change)="updateAcercademiTexto($event)" name="{{'text'}}">
-      </div>
-    </fieldset>
-  </form>
-</ng-template>
+  <ng-template #showThis>
+    <form #myForm="ngForm">
+      <fieldset ngModelGroup="inputs" #inputs="ngModelGroup">
+        <div class="d-flex flex-row abs-center bd-highlight mb-3">
+          <input type="text" (change)="updateAcercademiTitle($event)" name="{{'title}}">
+          <input type="text" (change)="updateAcercademiTexto($event)" name="{{'text'}}">
+        </div>
+      </fieldset>
+    </form>
+  </ng-template>
 </section>
-
-
-
-
-
-

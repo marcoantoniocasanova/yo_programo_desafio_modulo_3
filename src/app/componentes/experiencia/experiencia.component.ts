@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ExpTyp } from '../../modelos/experiencia.model'
 
 @Component({
@@ -24,6 +24,12 @@ export class ExperienciaComponent implements OnInit {
       { id: 7, fecha: "1995 - 1999", url: "https://www.calientefm.com.ve", urlTitle: "", img: "images/Caliente Stereo 105.9 FM.png", text: "Redactor de noticias en la emisora de radio Caliente Estéreo FM 105.9." },
       { id: 8, fecha: "1989 - 2000", url: "https://salesianosvenezuela.com", urlTitle: "", img: "images/CAS.png", text: "Redactor de contenidos en el Centro Audivisual Salesiano.." },
     ]
+  }
+
+  onSubmit(f: NgForm) {
+    console.log(f);
+    console.log(f.value);  // { first: '', last: '' }
+    console.log(f.valid);  // false
   }
 
   updateEditMode() {
