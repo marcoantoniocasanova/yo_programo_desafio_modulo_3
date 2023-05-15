@@ -67,7 +67,37 @@
                 <i class="icon-instagram bi px-2"></i>
               </a>
             </li>
-            <button class="btn btn-outline-primary" type="submit">Login</button>
+
+
+            <div *ngIf="displayElement; else showThis">
+              <button (click)="updateEditMode()" class="btn btn-outline-primary" type="submit">Login</button>
+            </div>
+
+            <ng-template #showThis>
+
+              <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                  </div>
+                  <input [ngModel]="user" type="text" class="form-control" placeholder="Usuario" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">#</span>
+                  </div>
+                  <input [ngModel]="pass" type="text" class="form-control" placeholder="Clave" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+
+                <button>
+                  Ingresar
+                </button>
+              </form>
+            </ng-template>
+
           </ul>
         </div>
       </div>

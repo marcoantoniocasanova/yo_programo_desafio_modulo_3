@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
   title = 'navbar';
+  displayElement = true;
+  user = '';
+  pass = '';
+
+
+  onSubmit() {
+
+  }
+
+
+  updateEditMode() {
+    this.displayElement = !this.displayElement;
+  }
 }
