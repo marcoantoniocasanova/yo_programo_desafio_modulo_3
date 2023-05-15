@@ -15,6 +15,9 @@ import { HabdurasComponent } from './componentes/habduras/habduras.component';
 import { HolafotoComponent } from './componentes/holafoto/holafoto.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { SharedService } from './service/service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

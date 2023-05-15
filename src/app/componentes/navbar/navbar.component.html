@@ -2,105 +2,111 @@
 <header id="volver">
   <nav id="volver" class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid" role="navigation">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-toggler">
-        <ul class="navbar-nav d-flex justify-content-center align-content-center me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa" class="px-2" target="_blank"
-              rel="noopener noreferrer">
-              <img src="assets/images/argentina_programa.png" alt="Logo de Argentina Programa" width="130" height="40">
-            </a>
-          </li>
-          <li class="navbar-item">
-            <a href="https://yoprogramo.org.ar" class="px-2" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/YoProgramo.png" alt="Logo de Yo Programo" width="130" height="40">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#MACG">¡Hola!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#acercademi">Acerca de mí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#exper">Experiencia</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#educ">Educación</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Habilidades Duras y Blandas
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#habd">Habilidades Duras</a></li>
-              <li><a class="dropdown-item" href="#habb">Habilidades Blandas</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#proy">Proyectos</a>
-          </li>
-        </ul>
+      <div class="row">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbar-toggler">
-
-          <ul class="navbar-nav d-flex me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav d-flex justify-content-center align-content-center me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="https:/wa.me/584241719860" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/whatsapp.svg" alt="Logo Whatsapp" width="30px" id="padwap" class="navbar-collapse">
+              <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa" class="px-2"
+                target="_blank" rel="noopener noreferrer">
+                <img src="assets/images/argentina_programa.png" alt="Logo de Argentina Programa" width="130"
+                  height="40">
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="https://yoprogramo.org.ar" class="px-2" target="_blank" rel="noopener noreferrer">
+                <img src="assets/images/YoProgramo.png" alt="Logo de Yo Programo" width="130" height="40">
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.facebook.com/MarcoAntonioCasanovaG" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/facebook.svg" alt="Logo Facebook" width="30px" class="navbar-collapse">
-              </a>
+              <a class="nav-link active" aria-current="page" href="#MACG">¡Hola!</a>
             </li>
             <li class="nav-item">
-              <a href="https://linkedin.com/in/marco-antonio-casanova-67b39934" target="_blank"
-                rel="noopener noreferrer">
-                <img src="assets/images/linkedin.svg" alt="Logo Lindedin" width="30px" class="navbar-collapse">
-              </a>
+              <a class="nav-link active" aria-current="page" href="#acercademi">Acerca de mí</a>
             </li>
             <li class="nav-item">
-              <a href="https://www.instagram.com/marcoantoniocasanovamac/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/instagram.svg" alt="Logo Instagram" width="30px" class="navbar-collapse">
-              </a>
+              <a class="nav-link active" href="#exper">Experiencia</a>
             </li>
-
-
-            <div *ngIf="displayElement; else showThis">
-              <button (click)="updateEditMode()" id="butlog" class="btn btn-outline-primary" type="submit">Login</button>
-            </div>
-
-            <ng-template #showThis>
-
-              <form #myForm="ngForm" (ngSubmit)="onSubmit()">
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                  </div>
-                  <input [ngModel]="user" type="text" class="form-control" placeholder="Usuario" aria-label="Username"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">#</span>
-                  </div>
-                  <input [ngModel]="pass" type="text" class="form-control" placeholder="Clave" aria-label="Username"
-                    aria-describedby="basic-addon1">
-                </div>
-
-                <button>
-                  Ingresar
-                </button>
-              </form>
-            </ng-template>
-
+            <li class="nav-item">
+              <a class="nav-link active" href="#educ">Educación</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Habilidades Duras y Blandas
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#habd">Habilidades Duras</a></li>
+                <li><a class="dropdown-item" href="#habb">Habilidades Blandas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#proy">Proyectos</a>
+            </li>
           </ul>
+          <div class="collapse navbar-collapse" id="navbar-toggler">
+
+            <ul class="navbar-nav d-flex me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="https:/wa.me/584241719860" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/whatsapp.svg" alt="Logo Whatsapp" width="30px" id="padwap"
+                    class="navbar-collapse">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.facebook.com/MarcoAntonioCasanovaG" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/facebook.svg" alt="Logo Facebook" width="30px" class="navbar-collapse">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://linkedin.com/in/marco-antonio-casanova-67b39934" target="_blank"
+                  rel="noopener noreferrer">
+                  <img src="assets/images/linkedin.svg" alt="Logo Lindedin" width="30px" class="navbar-collapse">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.instagram.com/marcoantoniocasanovamac/" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/instagram.svg" alt="Logo Instagram" width="30px" class="navbar-collapse">
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
   </nav>
 </header>
+
+<div class="container p-2" role="navigation">
+  <div *ngIf="displayElement; else showThis">
+    <button (click)="updateEditMode()" id="butlog" class="btn btn-outline-primary" type="submit">Login</button>
+  </div>
+
+  <ng-template #showThis>
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" name="username" class="form-control" placeholder="Usuario" aria-label="Username"
+          aria-describedby="basic-addon1" ngModel>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">#</span>
+        </div>
+        <input type="text" name="" class="form-control" placeholder="Clave" aria-label="Password"
+          aria-describedby="basic-addon1" ngModel>
+      </div>
+
+      <button class="btn btn-info">
+        Ingresar
+      </button>
+    </form>
+  </ng-template>
+</div>

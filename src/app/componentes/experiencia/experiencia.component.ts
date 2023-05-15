@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { ExpTyp } from '../../modelos/experiencia.model'
+import { SharedService } from 'src/app/service/service';
 
 @Component({
   selector: 'experiencia-component',
   templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.scss']
+  styleUrls: ['./experiencia.component.scss'],
+  providers: [SharedService]
 })
 export class ExperienciaComponent implements OnInit {
   displayElement = true;
   experience: ExpTyp[] = [];
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
   ngOnInit() {
+
+    this.sharedService.selectedlogin$.subscribe((value) => {
+      console.log(value);
+      this.displayElement = false;
+    });
+
     this.experience = [
       { id: 0, fecha: "2010 - 2022", url: "https://www.ujmv.edu/", urlTitle: "", img: "UJMV.png", text: "Profesor de aula virtual en la Universidad José María Vargas." },
       { id: 1, fecha: "2020 - 2023", url: "https://www.youtube.com/@UniVistaTV/about/", urlTitle: "", img: "Logo UniVista.jpeg", text: "Redactor y curador en Univista TV." },
@@ -24,6 +32,9 @@ export class ExperienciaComponent implements OnInit {
       { id: 7, fecha: "1995 - 1999", url: "https://www.calientefm.com.ve", urlTitle: "", img: "Caliente Stereo 105.9 FM.png", text: "Redactor de noticias en la emisora de radio Caliente Estéreo FM 105.9." },
       { id: 8, fecha: "1989 - 2000", url: "https://salesianosvenezuela.com", urlTitle: "", img: "CAS.png", text: "Redactor de contenidos en el Centro Audivisual Salesiano.." },
     ]
+
+
+
   }
 
   onSubmit(f: NgForm) {

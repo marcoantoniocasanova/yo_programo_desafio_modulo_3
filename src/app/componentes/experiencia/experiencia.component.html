@@ -26,20 +26,21 @@
           <input type="text" name="{{'exp_url'+i}}" [ngModel]="exp.url">
           <input type="text" name="{{'img'+i}}" [ngModel]="exp.img">
           <input type="text" name="{{'exp_txt'+i}}" [ngModel]="exp.text">
-          <button (click)="deleteExperience(exp.id)">
+          <button class="btn btn-danger" (click)="deleteExperience(exp.id)">
             Borrar
           </button>
         </div>
       </fieldset>
-      <button (click)="addExperience()">
-        Nueva Experiencia
+      <button class="btn btn-success" (click)="addExperience()">
+        + Nueva Experiencia
       </button>
-      <button type="submit">
+      <button class="btn btn-info ml-2" type="submit">
         Guardar Cambios
       </button>
     </form>
+    <button class="btn btn-info" (click)="updateEditMode()">
+      {{displayElement ? "Editar" : "Mostar"}}
+    </button>
   </ng-template>
-  <button (click)="updateEditMode()">
-    {{displayElement ? "Editar" : "Mostar"}}
-  </button>
+
 </section>
