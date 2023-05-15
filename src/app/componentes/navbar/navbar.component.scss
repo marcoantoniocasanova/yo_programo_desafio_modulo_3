@@ -20,15 +20,20 @@ a {
   background-color: lightblue;
 }
 
-.navbar-collapse {
-  align-items: center;
-  justify-content: left;
-}
 
 .navbar-collapse  {
 align-items: center;
 justify-content: space-between;
 padding: 5px;
+}
+
+#padwap {
+  margin-left: 80px;
+}
+
+#butlog {
+  margin-left: 5px;
+  width: 70px;
 }
 
 /* seccion Hero carrusel */
