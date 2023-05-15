@@ -44,6 +44,7 @@
           </li>
         </ul>
         <div class="collapse navbar-collapse" id="navbar-toggler">
+
           <ul class="navbar-nav d-flex me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a href="https:/wa.me/584241719860" target="_blank" rel="noopener noreferrer">
@@ -66,7 +67,37 @@
                 <img src="assets/icons/instagram.svg" alt="Logo Instagram" width="30px" class="navbar-collapse">
               </a>
             </li>
-            <button class="btn btn-outline-primary navbar-collapse" type="submit">Login</button>
+
+
+            <div *ngIf="displayElement; else showThis">
+              <button (click)="updateEditMode()" class="btn btn-outline-primary" type="submit">Login</button>
+            </div>
+
+            <ng-template #showThis>
+
+              <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                  </div>
+                  <input [ngModel]="user" type="text" class="form-control" placeholder="Usuario" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">#</span>
+                  </div>
+                  <input [ngModel]="pass" type="text" class="form-control" placeholder="Clave" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+
+                <button>
+                  Ingresar
+                </button>
+              </form>
+            </ng-template>
+
           </ul>
         </div>
       </div>
