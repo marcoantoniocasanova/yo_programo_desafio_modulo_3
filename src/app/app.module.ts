@@ -14,6 +14,7 @@ import { HabblandasComponent } from './componentes/habblandas/habblandas.compone
 import { HabdurasComponent } from './componentes/habduras/habduras.component';
 import { HolafotoComponent } from './componentes/holafoto/holafoto.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     HabblandasComponent,
     HabdurasComponent,
     HolafotoComponent,
-    FooterComponent
+    FooterComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
