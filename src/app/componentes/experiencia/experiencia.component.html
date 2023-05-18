@@ -38,9 +38,9 @@
         Guardar Cambios
       </button>
     </form>
-    <button class="btn btn-info" (click)="updateEditMode()">
-      {{displayElement ? "Editar" : "Mostar"}}
-    </button>
   </ng-template>
-
+  <button *ngIf="showEditButton" class="btn btn-primary" (click)="updateEditMode()">
+    {{displayElement ? "Editar" : "Mostar"}}
+  </button>
 </section>
+<hr />

@@ -81,32 +81,34 @@
 </header>
 
 <div class="container p-2" role="navigation">
-  <div *ngIf="displayElement; else showThis">
-    <button (click)="updateEditMode()" id="butlog" class="btn btn-outline-primary" type="submit">Login</button>
-  </div>
+  <ng-container *ngIf="loginBarStatus === 0;else showLoginBar">
+    <button (click)="displayLoginBar()" id="butlog" class="btn btn-outline-primary" type="submit">Login</button>
+  </ng-container>
+  <ng-template #showLoginBar>
+    <ng-container *ngIf="loginBarStatus ===  1;else showLogOutBar">
+      <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
 
-  <ng-template #showThis>
-
-    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text" name="username" class="form-control" placeholder="Usuario" aria-label="Username"
+            aria-describedby="basic-addon1" ngModel>
         </div>
-        <input type="text" name="username" class="form-control" placeholder="Usuario" aria-label="Username"
-          aria-describedby="basic-addon1" ngModel>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">#</span>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#</span>
+          </div>
+          <input type="text" name="password" class="form-control" placeholder="Clave" aria-label="Password"
+            aria-describedby="basic-addon1" ngModel>
         </div>
-        <input type="text" name="" class="form-control" placeholder="Clave" aria-label="Password"
-          aria-describedby="basic-addon1" ngModel>
-      </div>
-
-      <button class="btn btn-info">
-        Ingresar
-      </button>
-    </form>
+        <button class="btn btn-info">
+          Ingresar
+        </button>
+      </form>
+    </ng-container>
+  </ng-template>
+  <ng-template #showLogOutBar>
+    <button (click)="updateEditMode()" id="butlog" class="btn btn-outline-primary" type="submit">Salir</button>
   </ng-template>
 </div>

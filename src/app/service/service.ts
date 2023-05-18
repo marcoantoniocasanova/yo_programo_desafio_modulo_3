@@ -1,22 +1,22 @@
-/* import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-
-@Injectable()
-export class SharedService {
-    messageSource: BehaviorSubject<string> = new BehaviorSubject('');
-    constructor() { }
-} */
-
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable()
-export class SharedService {
-    private login$ = new BehaviorSubject<any>({});
-    selectedlogin$ = this.login$.asObservable();
+@Injectable({
+    providedIn: 'root'
+})
+export class SharedVarService {
 
-    setlogin(login: any) {
-        console.log("serlogin")
-        this.login$.next(login);
+    private routerInfo: BehaviorSubject<boolean>;
+
+    constructor() {
+        this.routerInfo = new BehaviorSubject<boolean>(false);
     }
+
+    getValue(): Observable<boolean> {
+        return this.routerInfo.asObservable();
+    }
+    setValue(newValue: boolean): void {
+        this.routerInfo.next(newValue);
+    }
+
 }

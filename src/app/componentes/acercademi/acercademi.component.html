@@ -1,24 +1,28 @@
 <!-- Seccion Sobre Mi -->
 <section class="sobre-mi seccion-oscura">
-  <div class="contenedor">
-      <h4 class="seccion-titulo" id="acercademi">Acerca de mí</h4>
-        <h5 class="seccion-titulo"> Primero la redacción, luego la programación y... ¡después existo!</h5>
-        <p class="seccion-texto">Soy Licenciado en Comunicación Social y he trabajado como redactor de contenidos para varias empresas.
-          También tengo varios años de experiencia docente. En los últimos tiempos, he querido cumplir mi sueño de entender y abordar la programación.
-          Encontré la forma de satisfacer mis necesidades de adquirir destrezas informáticas a través de los cursos de Argentina Programa.
-          Gracias a esta plataforma, encontré una valiosa oportunidad para desarrollar conocimientos y habilidades que me permitirán seguir
-          adquiriendo y desarrollando lo que necesito para lograr desempeñarme exitosamente como Programador Full Stack Jr.</p>
-        <a href="assets/images/collage redactor programador.jpg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">¿Un redactor que programa?</a>
-        <a href="#volver"><button class="btn btn-outline-primary"  type="button">Volver arriba</button></a>
+  <div class="contenedor" *ngIf="displayElement; else showThis">
+    <h4 class="seccion-titulo" id="acercademi">Acerca de mí</h4>
+    <h5 class="seccion-titulo">{{titulo}}</h5>
+    <p class="seccion-texto">{{texto}}
+    </p>
+    <a href="assets/images/collage redactor programador.jpg" target="_blank" rel="noopener noreferrer"
+      class="btn btn-primary">¿Un redactor que programa?</a>
+    <a href="#volver"><button class="btn btn-outline-primary" type="button">Volver arriba</button></a>
   </div>
   <ng-template #showThis>
     <form #myForm="ngForm">
       <fieldset ngModelGroup="inputs" #inputs="ngModelGroup">
-        <div class="d-flex flex-row abs-center bd-highlight mb-3">
-          <input type="text" (change)="updateAcercademiTitle($event)" name="{{'title}}">
-          <input type="text" (change)="updateAcercademiTexto($event)" name="{{'text'}}">
+        <div class=" bd-highlight mb-3">
+          <p>Seccion Titulo:</p>
+          <input type="text" (change)="updateAcercademiTitle($event)" name="title">
+          <p>Seccion Texto:</p>
+          <textarea (change)="updateAcercademiTexto($event)" id="text" name="text" rows="4" cols="50">
+            </textarea>
         </div>
       </fieldset>
     </form>
   </ng-template>
+  <button *ngIf="showEditButton" class="btn btn-primary pt-3" (click)="updateEditMode()">
+    {{displayElement ? "Editar" : "Mostar"}}
+  </button>
 </section>

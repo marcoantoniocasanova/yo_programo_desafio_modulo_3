@@ -15,7 +15,7 @@ import { HabdurasComponent } from './componentes/habduras/habduras.component';
 import { HolafotoComponent } from './componentes/holafoto/holafoto.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
-import { SharedService } from './service/service';
+import { SharedVarService } from './service/service';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -39,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [SharedService],
+  providers: [SharedVarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

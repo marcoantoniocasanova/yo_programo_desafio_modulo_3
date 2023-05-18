@@ -41,3 +41,7 @@
       </button>
     </form>
   </ng-template>
+  <button *ngIf="showEditButton" class="btn btn-primary" (click)="updateEditMode()">
+    {{displayElement ? "Editar" : "Mostar"}}
+  </button>
+</section>

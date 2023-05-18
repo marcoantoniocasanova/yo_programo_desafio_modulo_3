@@ -8,5 +8,3 @@ import { Form, FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent { }
-
-

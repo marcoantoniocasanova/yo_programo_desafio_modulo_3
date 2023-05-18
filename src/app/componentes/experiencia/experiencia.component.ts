@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { ExpTyp } from '../../modelos/experiencia.model'
-import { SharedService } from 'src/app/service/service';
+import { SharedVarService } from 'src/app/service/service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'experiencia-component',
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.scss'],
-  providers: [SharedService]
 })
 export class ExperienciaComponent implements OnInit {
-  displayElement = true;
   experience: ExpTyp[] = [];
-
-  constructor(private sharedService: SharedService) { }
+  showEditButton = false;
+  displayElement = true;
+  constructor(public sharedService: SharedVarService, private ngZone: NgZone) { }
   ngOnInit() {
 
-    this.sharedService.selectedlogin$.subscribe((value) => {
-      console.log(value);
-      this.displayElement = false;
+
+    this.sharedService.getValue().subscribe((value) => {
+      this.showEditButton = value;
     });
 
     this.experience = [
@@ -32,9 +32,6 @@ export class ExperienciaComponent implements OnInit {
       { id: 7, fecha: "1995 - 1999", url: "https://www.calientefm.com.ve", urlTitle: "", img: "Caliente Stereo 105.9 FM.png", text: "Redactor de noticias en la emisora de radio Caliente Estéreo FM 105.9." },
       { id: 8, fecha: "1989 - 2000", url: "https://salesianosvenezuela.com", urlTitle: "", img: "CAS.png", text: "Redactor de contenidos en el Centro Audivisual Salesiano.." },
     ]
-
-
-
   }
 
   onSubmit(f: NgForm) {
