@@ -14,9 +14,10 @@
       <fieldset ngModelGroup="inputs" #inputs="ngModelGroup">
         <div class=" bd-highlight mb-3">
           <p>Seccion Titulo:</p>
-          <input type="text" (change)="updateAcercademiTitle($event)" name="title">
+          <input type="text" (change)="updateAcercademiTitle($event)" name="title" value={{this.titulo}}>
           <p>Seccion Texto:</p>
           <textarea (change)="updateAcercademiTexto($event)" id="text" name="text" rows="4" cols="50">
+            {{ this.texto }}
             </textarea>
         </div>
       </fieldset>

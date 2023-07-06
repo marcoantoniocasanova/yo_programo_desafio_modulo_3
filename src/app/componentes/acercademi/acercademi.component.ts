@@ -28,15 +28,13 @@ export class AcercademiComponent implements OnInit {
     this.sharedService.getValue().subscribe((value) => {
       this.showEditButton = value;
     });
-    let headers = new HttpHeaders({
-      'x-rapidapi-host': 'random-facts2.p.rapidapi.com',
-      'x-rapidapi-key': 'your-api-key'
-    });
+
     this.http
       .get<any>('https://express-js-service-api-cv.onrender.com/users/1', {
-        headers: headers
+        headers: {}
       })
       .subscribe(data => {
+        console.log(data);
         this.titulo = 'Hola! ' + data.data.first_name + ' ' + data.data.last_name
         this.texto = data.data.description;
       });
@@ -52,5 +50,11 @@ export class AcercademiComponent implements OnInit {
 
   updateAcercademiTexto(event: any) {
     this.texto = event.target.value
+    const body = { aboutMe: event.target.value };
+    this.http
+      .put<any>('https://express-js-service-api-cv.onrender.com/users/aboutme/1', body)
+      .subscribe(data => {
+        console.log(data);
+      });
   }
 }
