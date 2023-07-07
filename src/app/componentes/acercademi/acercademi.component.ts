@@ -34,9 +34,9 @@ export class AcercademiComponent implements OnInit {
         headers: {}
       })
       .subscribe(data => {
-        console.log(data);
+        console.log(data.data.about_me);
         this.titulo = 'Hola! ' + data.data.first_name + ' ' + data.data.last_name
-        this.texto = data.data.description;
+        this.texto = data.data.about_me;
       });
   }
 
@@ -46,6 +46,13 @@ export class AcercademiComponent implements OnInit {
 
   updateAcercademiTitle(event: any) {
     this.titulo = event.target.value
+    const body = { aboutMeTitle: event.target.value };
+    this.http
+      .put<any>('https://express-js-service-api-cv.onrender.com/users/aboutmetitle/1', body)
+      .subscribe(data => {
+        console.log(data);
+      });
+
   }
 
   updateAcercademiTexto(event: any) {

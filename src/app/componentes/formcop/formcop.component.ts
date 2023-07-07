@@ -43,7 +43,7 @@ export class ExperienciaComponent implements OnInit {
     this.displayElement = !this.displayElement;
   }
 
-  addExperience() {
+  addExperience(idx) {
     var exp = { id: this.experience[this.experience.length - 1].id + 1, fecha: "", img: "", titulo: "" };
     this.experience.push(exp);
 
@@ -54,6 +54,11 @@ export class ExperienciaComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
       });
+
+
+    document.getElementById(idx);
+
+
   }
 
   updateExperience(id: number, fecha: string, img: string, text: string) {

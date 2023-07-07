@@ -1,8 +1,6 @@
 export interface ExpTyp {
     id: number;
     fecha: string;
-    url: string;
-    urlTitle: string;
+    titulo: string;
     img: string;
-    text: string;
 }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/dist/",
+    "public": "./dist/yo_programo_desfio_modulo_3",
     "ignore": [
       "firebase.json",
       "**/.*",
